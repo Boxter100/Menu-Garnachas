@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+    <div class="page-title">
+        <h1>Menú</h1>
+        <h2>Garnachas</h2>
+    </div>
+
+    <!-- Contenedor para las tarjetas -->
+    <div class="card-container">
+        <div class="card">
+            <div class="card-image">
+                <img src="Imagenes/pambazo.jpg" alt="Pambazo">
+            </div>
+            <h3 class="card-title">Pambazo</h3>
+            <div class="card-body">
+                <div class="item">
+                    <p>Sencillo</p>
+                    <span class="price">$25</span>
+                    <i class="bi bi-dash-square btn-minus" onclick="updateCount(this, -1)"></i>
+                    <span id="count1" class="count">0</span>
+                    <i class="bi bi-plus-square btn-plus" onclick="updateCount(this, 1)"></i>
+                </div>
+                <div class="item">
+                    <p>Con Guisado</p>
+                    <span class="price">$30</span>
+                    <i class="bi bi-dash-square btn-minus" onclick="updateCount(this, -1)"></i>
+                    <span id="count2" class="count">0</span>
+                    <i class="bi bi-plus-square btn-plus" onclick="updateCount(this, 1)"></i>
+                </div>
+                <div class="item">
+                    <p>Con Bistec, Suadero<br>o Longaniza</p>
+                    <span class="price">$35</span>
+                    <i class="bi bi-dash-square btn-minus" onclick="updateCount(this, -1)"></i>
+                    <span id="count3" class="count">0</span>
+                    <i class="bi bi-plus-square btn-plus" onclick="updateCount(this, 1)"></i>
+                </div>
+                <button class="add-to-cart" onclick="addToCart()">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="Imagenes/Sopes.jpg" alt="Sopes">
+            </div>
+            <h3 class="card-title">Sopes</h3>
+            <div class="card-body">
+                <div class="item">
+                    <p>Sencillo</p>
+                    <span class="price">$25</span>
+                    <i class="bi bi-dash-square btn-minus" onclick="updateCount(this, -1)"></i>
+                    <span id="count4" class="count">0</span>
+                    <i class="bi bi-plus-square btn-plus" onclick="updateCount(this, 1)"></i>
+                </div>
+                <div class="item">
+                    <p>Con Guisado</p>
+                    <span class="price">$30</span>
+                    <i class="bi bi-dash-square btn-minus" onclick="updateCount(this, -1)"></i>
+                    <span id="count5" class="count">0</span>
+                    <i class="bi bi-plus-square btn-plus" onclick="updateCount(this, 1)"></i>
+                </div>
+                <div class="item">
+                    <p>Con Bistec, Suadero<br>o Longaniza</p>
+                    <span class="price">$35</span>
+                    <i class="bi bi-dash-square btn-minus" onclick="updateCount(this, -1)"></i>
+                    <span id="count6" class="count">0</span>
+                    <i class="bi bi-plus-square btn-plus" onclick="updateCount(this, 1)"></i>
+                </div>
+                <button class="add-to-cart" onclick="addToCart()">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="Imagenes/Gorditas.jpg" alt="Sopes">
+            </div>
+            <h3 class="card-title">Gorditas</h3>
+            <div class="card-body">
+                <div class="item">
+                    <p>Sencillo</p>
+                    <span class="price">$25</span>
+                    <i class="bi bi-dash-square btn-minus" onclick="updateCount(this, -1)"></i>
+                    <span id="count7" class="count">0</span>
+                    <i class="bi bi-plus-square btn-plus" onclick="updateCount(this, 1)"></i>
+                </div>
+                <div class="item">
+                    <p>Con Guisado</p>
+                    <span class="price">$30</span>
+                    <i class="bi bi-dash-square btn-minus" onclick="updateCount(this, -1)"></i>
+                    <span id="count8" class="count">0</span>
+                    <i class="bi bi-plus-square btn-plus" onclick="updateCount(this, 1)"></i>
+                </div>
+                <div class="item">
+                    <p>Con Bistec, Suadero<br>o Longaniza</p>
+                    <span class="price">$35</span>
+                    <i class="bi bi-dash-square btn-minus" onclick="updateCount(this, -1)"></i>
+                    <span id="count9" class="count">0</span>
+                    <i class="bi bi-plus-square btn-plus" onclick="updateCount(this, 1)"></i>
+                </div>
+                <button class="add-to-cart" onclick="addToCart()">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón flotante -->
+    <div class="floating-btn" onclick="toggleCart()">
+        <i class="bi bi-cart3"></i>
+    </div>
+
+    <!-- Contenedor del resumen de compras -->
+    <div class="cart-summary" id="cartSummary">
+        <h3>Resumen de Compras</h3>
+        <div id="cartItems"></div>
+        <button onclick="closeCart()">Cerrar</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

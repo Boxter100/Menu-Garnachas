@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se distribuyan en múltiples líneas */
+    justify-content: space-between; /* Distribuye el espacio entre las tarjetas */
+    gap: 30px; /* Espaciado entre las tarjetas */
+    margin: 30px; /* Margen alrededor del contenedor */
+}
+
+.page-title {
+    text-align: center; /* Centra el texto */
+    padding: 20px; /* Espacio interno */
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Degradado de fondo */
+    border-radius: 0; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9); /* Sombra para dar profundidad */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.page-title h1 {
+    font-size: 3em; /* Tamaño de fuente grande para el título */
+    color: white; /* Color del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Sombra de texto */
+    margin: 0; /* Eliminar margen por defecto */
+}
+
+.page-title h2 {
+    font-size: 1.5em; /* Tamaño de fuente menor para el subtítulo */
+    color: white; /* Color del texto */
+    margin-top: 10px; /* Espacio encima del subtítulo */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9); /* Sombra de texto */
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+
+.card {
+    padding: 20px;
+    width: 330px;
+    min-height: 370px;
+    border-radius: 20px;
+    background: #e8e8e8;
+    box-shadow: 5px 5px 6px #dadada,
+                -5px -5px 6px #f6f6f6;
+    transition: 0.4s;
+    margin: auto;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Cambiado a transform para un mejor rendimiento */
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2e54a7;
+    margin: 15px 0 0 10px;
+    text-align: center;
+}
+
+.card-image {
+    min-height: 170px;
+    background-color: #c9c9c9;
+    border-radius: 15px;
+    box-shadow: inset 8px 8px 10px #c3c3c3,
+                inset -8px -8px 10px #cfcfcf;
+    overflow: hidden; /* Para que la imagen no se salga del borde redondeado */
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen al tamaño del contenedor sin deformarla */
+    border-radius: 15px; /* Para que la imagen también tenga bordes redondeados */
+}
+
+.card-body {
+    margin: 13px 0 0 10px;
+    color: rgb(31, 31, 31);
+    font-size: 15px;
+}
+
+.card-body .item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card-body .item p {
+    margin-right: 10px;
+    flex: 1;
+}
+
+.price {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.btn-plus, .btn-minus {
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 5px; /* Bordes redondeados para botones */
+    transition: background-color 0.3s; /* Transición suave para el hover */
+}
+
+.btn-plus:hover, .btn-minus:hover {
+    background-color: #ccc;
+}
+
+span {
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.footer {
+    float: right;
+    margin: 28px 0 0 18px;
+    font-size: 13px;
+    color: #636363;
+}
+
+.by-name {
+    font-weight: 700;
+}
+
+
+.add-to-cart {
+    margin: auto;
+    display: block; /* Asegura que el botón se comporte como un bloque */
+    background-color: #2e54a7; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Efecto de transición para el color */
+}
+
+.add-to-cart:hover {
+    background-color: #1c3c7a; /* Color de fondo al pasar el ratón */
+}
+
+
+
+
+/* Estilo para el botón flotante */
+.floating-btn {
+    position: fixed;
+    top: 10PX; /* Espaciado desde la parte inferior */
+    right: 10px; /* Espaciado desde la derecha */
+    background-color: #2e54a7; /* Color de fondo */
+    color: white; /* Color del icono */
+    border: none; /* Sin borde */
+    border-radius: 50%; /* Forma circular */
+    width: 60px; /* Ancho del botón */
+    height: 60px; /* Alto del botón */
+    display: flex; /* Flexbox para centrar el icono */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    font-size: 24px; /* Tamaño del icono */
+    cursor: pointer; /* Cursor de puntero */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    transition: background-color 0.3s; /* Transición para el color */
+}
+
+.floating-btn:hover {
+    background-color: #1f3c8f; /* Color al pasar el mouse */
+}
+
+/* Estilo para el contenedor del resumen de compras */
+.cart-summary {
+    position: fixed;
+    bottom: 0; /* Posición en la parte inferior */
+    left: 0; /* Alinear a la izquierda */
+    right: 0; /* Alinear a la derecha */
+    height: 75%; /* Altura del contenedor */
+    background-color: #fff; /* Fondo blanco */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* Sombra superior */
+    padding: 20px; /* Espaciado interno */
+    display: none; /* Ocultar inicialmente */
+    overflow-y: auto; /* Desplazamiento vertical */
+}
+
+.cart-summary h3 {
+    margin-bottom: 10px; /* Espaciado inferior */
+}
+
+
+
+
