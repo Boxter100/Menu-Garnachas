@@ -1,0 +1,129 @@
+body {
+    font-family: 'Arial', sans-serif; /* Fuente general */
+    background-color: #f8f9fa; /* Color de fondo suave */
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center; /* Centra el título */
+    color: #2e54a7; /* Color del título */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+.contenedor-card {
+    background: white; /* Fondo blanco para la tarjeta */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    padding: 20px; /* Espacio interno */
+    max-width: 400px; /* Ancho máximo */
+    margin: auto; /* Centra la tarjeta */
+    text-align: center; /* Centra el texto dentro de la tarjeta */
+}
+
+.contendor-img-trans img {
+    width: 120px; /* Ancho de las imágenes */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin: 10px; /* Espacio inferior de las imágenes */
+}
+
+.contendor-img-azteca img {
+width: 300px;
+height: auto;
+margin: 20px;
+}
+
+.contendor-img-trans p {
+    font-size: 20px; /* Tamaño del texto de transferencia */
+    font-weight: bold; /* Negrita */
+    color: #2e54a7; /* Color del texto */
+    margin: 0; /* Elimina margen */
+}
+
+p {
+    color: #333; /* Color gris oscuro para el texto */
+    margin: 8px 0; /* Espacio superior e inferior */
+}
+
+
+/* Estilos del botón de regreso */
+.floating-btn-back {
+    position: fixed; /* Fijo en la pantalla */
+    bottom: 20px; /* Espacio desde la parte inferior */
+    right: 20px; /* Espacio desde la derecha */
+    background-color: #2e54a7; /* Color de fondo azul */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno del botón */
+    display: flex; /* Flexbox para alinear el contenido */
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    text-align: center; /* Alinear el texto en el centro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    transition: background-color 0.3s ease; /* Transición suave para el color */
+    cursor: pointer; /* Cursor de puntero */
+    text-decoration: none;
+}
+
+/* Estilo para el texto dentro del botón */
+.floating-btn-back p {
+    margin: auto; /* Espacio entre el ícono y el texto */
+    font-size: 15px; /* Tamaño del texto */
+    color: white;
+}
+
+/* Estilo para el ícono */
+.floating-btn-back i {
+    font-size: 20px; /* Tamaño del ícono */
+}
+
+/* Efecto hover */
+.floating-btn-back:hover {
+    background-color: #1f3c8f; /* Color al pasar el mouse */
+}
+
+
+.contenedor-card {
+    text-align: center; /* Centra el texto en todo el contenedor */
+}
+
+
+
+.copy-container {
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    justify-content: center; /* Centra los elementos en el eje horizontal */
+    align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
+    margin-top: 10px; /* Espaciado superior para separar del texto anterior */
+}
+
+#card-number {
+    font-size: 18px; /* Tamaño de fuente del número de tarjeta */
+    font-weight: bold; /* Texto en negrita para destacar */
+    margin-right: 10px; /* Espaciado a la derecha para separar del botón */
+}
+
+#nombre {
+    font-size: 18px; /* Tamaño de fuente del número de tarjeta */
+    font-weight: bold; /* Texto en negrita para destacar */
+    margin-right: 10px; /* Espaciado a la derecha para separar del botón */
+}
+
+.copy-button {
+    background-color: #007bff; /* Color de fondo azul */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    color: white; /* Color del texto/icono */
+    padding: 8px 12px; /* Espaciado interno del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+.copy-button:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+.copy-button i {
+    font-size: 16px; /* Tamaño del icono dentro del botón */
+}
+
