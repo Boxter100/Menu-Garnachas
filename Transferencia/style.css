@@ -28,9 +28,10 @@ h2 {
 }
 
 .contendor-img-azteca img {
-width: 300px;
+width: 270px;
 height: auto;
 margin: 20px;
+align-items: center;
 }
 
 .contendor-img-trans p {
@@ -97,15 +98,10 @@ p {
     margin-top: 10px; /* Espaciado superior para separar del texto anterior */
 }
 
-#card-number {
+#card-number, #nombre {
     font-size: 18px; /* Tamaño de fuente del número de tarjeta */
     font-weight: bold; /* Texto en negrita para destacar */
-    margin-right: 10px; /* Espaciado a la derecha para separar del botón */
-}
-
-#nombre {
-    font-size: 18px; /* Tamaño de fuente del número de tarjeta */
-    font-weight: bold; /* Texto en negrita para destacar */
+    text-decoration: none; /* Sin subrayado */
     margin-right: 10px; /* Espaciado a la derecha para separar del botón */
 }
 
@@ -126,4 +122,3 @@ p {
 .copy-button i {
     font-size: 16px; /* Tamaño del icono dentro del botón */
 }
-
