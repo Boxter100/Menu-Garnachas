@@ -1,11 +1,39 @@
 * {
     margin: 0;
     padding: 0; 
-
+    font-family: 'open sans';
+    
+}
 body {
     background:#fffdf6;
 }
+
+html, body {
+    margin: 0; /* Elimina el margen predeterminado */
+    padding: 0; /* Elimina el relleno predeterminado */
+    height: 100%; /* Asegura que el body y html ocupen toda la altura */
 }
+
+.container {
+    position: fixed; /* Fija el contenedor al fondo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+        -45deg,
+        #feb47b 0,
+        transparent 30px,
+        #ff7e5f 30px,
+        transparent 60px,
+        #feb47b 120px,
+        transparent 240px
+    );
+    background-color: #feb47b;
+    z-index: -1; /* Esto asegura que el fondo esté detrás de todo el contenido */
+}
+
+
 .card-container {
     display: flex;
     flex-wrap: wrap; /* Permite que las tarjetas se distribuyan en múltiples líneas */
@@ -24,18 +52,20 @@ body {
 }
 
 .page-title h1 {
-    font-size: 3em; /* Tamaño de fuente grande para el título */
+    font-size: 2em; /* Tamaño de fuente grande para el título */
     color: white; /* Color del texto */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Sombra de texto */
     margin: 0; /* Eliminar margen por defecto */
+    font-family: 'Lobster';
 }
 
 .page-title h2 {
-    font-size: 1.5em; /* Tamaño de fuente menor para el subtítulo */
+    font-size: 2.5em; /* Tamaño de fuente menor para el subtítulo */
     color: white; /* Color del texto */
     margin-top: 10px; /* Espacio encima del subtítulo */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9); /* Sombra de texto */
     letter-spacing: 1px; /* Espaciado entre letras */
+    font-family: 'Tangerine';
 }
 
 
@@ -47,36 +77,45 @@ body {
     background: #e8e8e8;
     box-shadow: 5px 5px 6px #dadada,
                 -5px -5px 6px #f6f6f6;
-    transition: 0.4s;
     margin: auto;
+    animation: fadeIn 1s ease-out forwards; /* Animación de fade-in */
 }
 
-.card:hover {
-    transform: translateY(-10px); /* Cambiado a transform para un mejor rendimiento */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Comienza invisible */
+    }
+    to {
+        opacity: 1; /* Termina totalmente visible */
+    }
 }
 
 .card-title {
-    font-size: 18px;
+    font-size: 25px;
     font-weight: 600;
-    color: #2e54a7;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Degradado de fondo */
+    -webkit-background-clip: text; /* Aplica el degradado solo al texto en WebKit */
+    background-clip: text; /* Aplica el degradado solo al texto en otros navegadores */
+    color: transparent; /* Hace el texto transparente para que solo se vea el degradado */
     margin: 15px 0 0 10px;
     text-align: center;
 }
 
 .card-image {
-    min-height: 170px;
+    height: 170px; /* Altura fija para la imagen */
     background-color: #c9c9c9;
     border-radius: 15px;
     box-shadow: inset 8px 8px 10px #c3c3c3,
-                inset -8px -8px 10px #cfcfcf;
-    overflow: hidden; /* Para que la imagen no se salga del borde redondeado */
+                inset -8px -8px 10px #cfcfcf,
+                0px 0px 10px 3px rgba(0, 0, 0, 0.6); /* Sombra añadida */
+    overflow: hidden;
 }
 
 .card-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ajusta la imagen al tamaño del contenedor sin deformarla */
-    border-radius: 15px; /* Para que la imagen también tenga bordes redondeados */
+    height: 100%; /* Fija la altura de la imagen a la altura del contenedor */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsionarse */
+    border-radius: 15px; /* Bordes redondeados en la imagen */
 }
 
 .card-body {
@@ -102,8 +141,6 @@ body {
     font-size: 25px;
 }
 
-
-
 .btn-plus:hover, .btn-minus:hover {
     background-color: #ccc;
 }
@@ -124,55 +161,60 @@ span {
     font-weight: 700;
 }
 
-
 .add-to-cart {
     margin: auto;
-    display: block; /* Asegura que el botón se comporte como un bloque */
-    background-color: #2e54a7; /* Color de fondo */
-    color: white; /* Color del texto */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    padding: 10px 15px; /* Espaciado interno */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    transition: background-color 0.3s; /* Efecto de transición para el color */
+    display: block;
+    background-color: #2e54a7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .add-to-cart:hover {
-    background-color: #1c3c7a; /* Color de fondo al pasar el ratón */
+    background-color: #1c3c7a;
 }
 
 
 
 
-/* Estilo para el botón flotante de transferencia */
-.floating-btn-trans {
-    position: fixed;
-bottom: 80px;
-    right: 10px;
-    background-color: #2e54a7;
-    color: white;
-    color: white;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.9s;
+
+
+/* Animación de entrada para los botones */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.floating-btn-trans:hover {
-    background-color: #1f3c8f;
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
+
 
 
 /* Estilo para el botón de WhatsApp */
 .floating-btn-whats {
     position: fixed;
-    bottom: 10px; /* Puedes ajustar el posicionamiento */
+    bottom: 10px;
     right: 10px;
     background-color: #25D366;
     color: white;
@@ -182,14 +224,65 @@ bottom: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 33px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: bounceIn 1s ease-out;
+}
+
+
+/* Estilo para el botón flotante de postres */
+.floating-btn-postres  {
+    position: fixed;
+    bottom: 150px;
+    right: 10px;
+    background-color: #f8a5c2; /* Color pastel para postres */
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 24px;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.9s;
+    animation: slideIn 1s ease-out;
 }
 
-.floating-btn-whats:hover {
-    background-color: #20b358; /* Color al pasar el mouse */
+.floating-btn-postres img {
+    width: 40px;  /* Ajusta el tamaño del icono */
+    height: 40px; /* Ajusta el tamaño del icono */
+    object-fit: contain; /* Asegura que el icono no se distorsione */
+    filter: brightness(0) invert(1);  /* Esta combinación convierte el color a blanco */
 }
+
+
+
+.floating-btn-trans  {
+    position: fixed;
+    bottom: 80px;
+    right: 10px;
+    background-color: #2e54a7; /* Color pastel para postres */
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideIn 1s ease-out;
+}
+.floating-btn-trans img {
+    width: 40px;  /* Ajusta el tamaño del icono */
+    height: 40px; /* Ajusta el tamaño del icono */
+    object-fit: contain; /* Asegura que el icono no se distorsione */
+    filter: brightness(0) invert(1);  /* Esta combinación convierte el color a blanco */
+}
+
+
 
 

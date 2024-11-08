@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
+    <div class="container"></div>
+
     <h2>Pago Mediante Transferencia</h2>
     <div class="contenedor-card">
         <div class="contendor-img-trans">
@@ -19,14 +21,16 @@
         </div>
         <p>Destinatario</p>
         <div class="copy-container">
-            <p id="nombre">Ma del Rocio<br>López Hernández</p>
+            <!-- 'data-copy' contiene el texto que se copiará -->
+            <span id="nombre" data-copy="Ma del Rocio López Hernández">Ma del Rocio<br>López Hernández</span>
             <button class="copy-button" onclick="copyToClipboard('nombre')">
                 <i class="bi bi-copy"></i>
             </button>
         </div>
-        <p>Número de tarjeta</p>
+        <p>Número de Tarjeta</p>
         <div class="copy-container">
-            <p id="card-number">4027665857410030</p>
+            <!-- 'data-copy' contiene el número real que se copiará -->
+            <span id="card-number" data-copy="4027665857410030">4027 6658 5741 0030</span>
             <button class="copy-button" onclick="copyToClipboard('card-number')">
                 <i class="bi bi-copy"></i>
             </button>
@@ -40,4 +44,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html> 

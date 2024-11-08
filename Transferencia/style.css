@@ -5,16 +5,51 @@ body {
     padding: 20px;
 }
 
+.container {
+    width: 100%;
+    height: 100%;
+    --s: 82px;
+    
+    /* Nuevos colores basados en #2e54a7 */
+    --c1: #1c3b6a; /* Color más oscuro */
+    --c2: #2e54a7; /* Color base */
+    --c3: #4a76b1; /* Color más claro */
+
+    --_g: var(--c3) 0 120deg, #0000 0;
+    background: conic-gradient(from -60deg at 50% calc(100% / 3), var(--_g)),
+        conic-gradient(from 120deg at 50% calc(200% / 3), var(--_g)),
+        conic-gradient(
+            from 60deg at calc(200% / 3),
+            var(--c3) 60deg,
+            var(--c2) 0 120deg,
+            #0000 0
+        ),
+        conic-gradient(from 180deg at calc(100% / 3), var(--c1) 60deg, var(--_g)),
+        linear-gradient(
+            90deg,
+            var(--c1) calc(100% / 6),
+            var(--c2) 0 50%,
+            var(--c1) 0 calc(500% / 6),
+            var(--c2) 0
+        );
+    background-size: calc(1.732 * var(--s)) var(--s);
+    
+    position: fixed; /* Hace que el contenedor se quede fijo al fondo */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Asegura que el fondo quede detrás del contenido */
+}
+
 h2 {
     text-align: center; /* Centra el título */
-    color: #2e54a7; /* Color del título */
+    color: white; /* Color del título */
     margin-bottom: 20px; /* Espacio inferior */
 }
 
 .contenedor-card {
     background: white; /* Fondo blanco para la tarjeta */
     border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra sutil */
     padding: 20px; /* Espacio interno */
     max-width: 400px; /* Ancho máximo */
     margin: auto; /* Centra la tarjeta */
@@ -30,7 +65,7 @@ h2 {
 .contendor-img-azteca img {
 width: 270px;
 height: auto;
-margin: 20px;
+margin: 10px;
 align-items: center;
 }
 
@@ -43,82 +78,103 @@ align-items: center;
 
 p {
     color: #333; /* Color gris oscuro para el texto */
-    margin: 8px 0; /* Espacio superior e inferior */
+    margin: 10px 0; /* Espacio superior e inferior */
+    font-size: 20px;
+}
+.copy-container {
+    position: relative; /* Para permitir el uso de position absolute en el botón */
+    display: flex;
+    justify-content: center; /* Centra el contenido en el eje horizontal */
+    align-items: center; /* Centra el contenido en el eje vertical */
+    padding: 10px; /* Espaciado interno */
+    background-color: #f0f0f0; /* Fondo para probar el contenedor */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    margin: auto;
+    height: 45px;
+}
+
+#card-number, #nombre{
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center; /* Asegura que el texto esté centrado */
+}
+
+.copy-button {
+    position: absolute; /* Posiciona el botón independientemente del flujo normal */
+    right: 10px; /* Ajusta el botón a 10px del borde derecho */
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.copy-button i {
+    font-size: 16px;
 }
 
 
-/* Estilos del botón de regreso */
+/* Botón de regreso */
 .floating-btn-back {
-    position: fixed; /* Fijo en la pantalla */
-    bottom: 20px; /* Espacio desde la parte inferior */
-    right: 20px; /* Espacio desde la derecha */
-    background-color: #2e54a7; /* Color de fondo azul */
-    color: white; /* Color del texto */
-    border: none; /* Sin borde */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 10px 15px; /* Espaciado interno del botón */
-    display: flex; /* Flexbox para alinear el contenido */
-    justify-content: center; /* Centrar verticalmente */
-    align-items: center; /* Centrar horizontalmente */
-    text-align: center; /* Alinear el texto en el centro */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
-    transition: background-color 0.3s ease; /* Transición suave para el color */
-    cursor: pointer; /* Cursor de puntero */
+    position: fixed;
+    bottom: -100px; /* Inicialmente fuera de la pantalla */
+    right: 20px;
+    background-color: #2e54a7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
     text-decoration: none;
+    animation: slide-up 1s ease-out forwards, bounceRotate 3s ease-in-out 1s forwards; /* Animación para que suba y luego haga el rebote */
 }
 
 /* Estilo para el texto dentro del botón */
 .floating-btn-back p {
-    margin: auto; /* Espacio entre el ícono y el texto */
-    font-size: 15px; /* Tamaño del texto */
+    margin: auto;
+    font-size: 15px;
     color: white;
 }
 
 /* Estilo para el ícono */
 .floating-btn-back i {
-    font-size: 20px; /* Tamaño del ícono */
+    font-size: 20px;
+    transition: transform 0.5s ease;
 }
 
-/* Efecto hover */
-.floating-btn-back:hover {
-    background-color: #1f3c8f; /* Color al pasar el mouse */
+/* Keyframes para el movimiento de subida */
+@keyframes slide-up {
+    0% {
+        bottom: -100px; /* Comienza fuera de la pantalla */
+    }
+    100% {
+        bottom: 20px; /* Llega a su posición final */
+    }
+}
+
+/* Keyframes para la animación de rebote y rotación */
+@keyframes bounceRotate {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg); /* Posición inicial */
+    }
+    20% {
+        transform: translateY(-8px) rotate(-5deg); /* Rebote hacia arriba y leve rotación */
+    }
+    50% {
+        transform: translateY(0) rotate(5deg); /* Vuelve hacia abajo con ligera rotación opuesta */
+    }
+    70% {
+        transform: translateY(-4px) rotate(0deg); /* Rebote más leve */
+    }
 }
 
 
-.contenedor-card {
-    text-align: center; /* Centra el texto en todo el contenedor */
-}
-
-
-
-.copy-container {
-    display: flex; /* Utiliza flexbox para alinear los elementos */
-    justify-content: center; /* Centra los elementos en el eje horizontal */
-    align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
-    margin-top: 10px; /* Espaciado superior para separar del texto anterior */
-}
-
-#card-number, #nombre {
-    font-size: 18px; /* Tamaño de fuente del número de tarjeta */
-    font-weight: bold; /* Texto en negrita para destacar */
-    text-decoration: none; /* Sin subrayado */
-    margin-right: 10px; /* Espaciado a la derecha para separar del botón */
-}
-
-.copy-button {
-    background-color: #007bff; /* Color de fondo azul */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    color: white; /* Color del texto/icono */
-    padding: 8px 12px; /* Espaciado interno del botón */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    transition: background-color 0.3s; /* Transición suave para el color de fondo */
-}
-
-.copy-button:hover {
-    background-color: #0056b3; /* Color de fondo al pasar el mouse */
-}
-
-.copy-button i {
-    font-size: 16px; /* Tamaño del icono dentro del botón */
-}
