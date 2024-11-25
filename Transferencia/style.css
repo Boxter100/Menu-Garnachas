@@ -62,12 +62,20 @@ h2 {
     margin: 10px; /* Espacio inferior de las imágenes */
 }
 
-.contendor-img-azteca img {
-width: 270px;
-height: auto;
-margin: 10px;
-align-items: center;
+.contendor-img-azteca {
+    display: flex; /* Asegura que el contenido se alinee correctamente */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    margin: 10px;
 }
+
+.contendor-img-azteca img {
+    max-width: 90%; /* La imagen no será más grande que su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina espacios blancos alrededor de la imagen */
+    margin: 0 auto; /* Centra la imagen */
+}
+
 
 .contendor-img-trans p {
     font-size: 20px; /* Tamaño del texto de transferencia */
@@ -82,28 +90,30 @@ p {
     font-size: 20px;
 }
 .copy-container {
-    position: relative; /* Para permitir el uso de position absolute en el botón */
+    position: relative; /* Para manejar la posición absoluta del botón */
     display: flex;
-    justify-content: center; /* Centra el contenido en el eje horizontal */
-    align-items: center; /* Centra el contenido en el eje vertical */
+    align-items: center; /* Alinea verticalmente el contenido */
+    justify-content: center; /* Centra el contenido (texto) */
     padding: 10px; /* Espaciado interno */
-    background-color: #f0f0f0; /* Fondo para probar el contenedor */
+    background-color: #f0f0f0;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     max-width: 300px;
     margin: auto;
-    height: 45px;
 }
 
-#card-number, #nombre{
-    font-size: 18px;
+#nombre, #card-number {
+    font-size: 16px;
     font-weight: bold;
     text-align: center; /* Asegura que el texto esté centrado */
+    margin: 0 auto; /* Centra el texto */
 }
 
 .copy-button {
-    position: absolute; /* Posiciona el botón independientemente del flujo normal */
-    right: 10px; /* Ajusta el botón a 10px del borde derecho */
+    position: absolute; /* Posiciona el botón independientemente */
+    right: 10px; /* Lo ajusta al borde derecho del contenedor */
+    top: 50%; /* Centra verticalmente el botón */
+    transform: translateY(-50%); /* Ajusta la posición vertical precisa */
     background-color: #007bff;
     border: none;
     border-radius: 5px;
@@ -111,11 +121,35 @@ p {
     padding: 8px 12px;
     cursor: pointer;
     transition: background-color 0.3s;
+    flex-shrink: 0; /* Evita que el botón cambie de tamaño */
 }
 
 .copy-button i {
     font-size: 16px;
 }
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 400px) {
+    .copy-container {
+        flex-direction: column; /* Apila texto y botón verticalmente */
+        align-items: center; /* Centra ambos elementos */
+        padding: 15px; /* Ajusta el espaciado */
+    }
+
+    #nombre, #card-number {
+        margin-bottom: 10px; /* Añade espacio entre el texto y el botón */
+    }
+
+    .copy-button {
+        position: relative; /* Cambia a posición relativa para adaptarse */
+        top: 0;
+        right: 0;
+        transform: none; /* Elimina transformaciones para un diseño limpio */
+        width: 15%; /* Ocupa el ancho completo en pantallas pequeñas */
+        text-align: center; /* Centra el texto dentro del botón */
+    }
+}
+
 
 
 /* Botón de regreso */

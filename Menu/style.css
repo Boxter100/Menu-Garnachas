@@ -282,7 +282,3 @@ span {
     object-fit: contain; /* Asegura que el icono no se distorsione */
     filter: brightness(0) invert(1);  /* Esta combinación convierte el color a blanco */
 }
-
-
-
-
